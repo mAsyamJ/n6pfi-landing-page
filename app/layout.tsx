@@ -13,7 +13,7 @@ const outfit = Outfit({
 const spaceMono = Space_Mono({
   subsets: ["latin"],
   variable: "--font-space-mono",
-  weights: ["400", "700"],
+  weight: ["400", "700"],
   display: "swap",
   preload: true,
 })
