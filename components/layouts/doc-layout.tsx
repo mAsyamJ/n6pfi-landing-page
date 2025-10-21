@@ -63,7 +63,13 @@ export default function DocLayout({
                 <div className="h-6 sm:h-7 md:h-8 flex justify-start items-start gap-2 sm:gap-3">
                   <div className="px-2 sm:px-3 md:px-[14px] py-1 sm:py-[6px] bg-[#f0f0f0] shadow-[0px_0px_15px_rgba(147,51,234,0.2)] overflow-hidden rounded-full flex justify-center items-center">
                     <div className="flex flex-col justify-center text-[#0a0a14] text-xs md:text-[13px] font-medium leading-5 font-sans">
-                      Log in
+                      <a
+                        href="https://napfi-zenith.vercel.app"
+                        target="_blank" // hapus kalau mau tetap di tab yang sama
+                        className="flex flex-col justify-center text-[#0a0a14] text-xs md:text-[13px] font-medium leading-5 font-sans hover:underline cursor-pointer"
+                      >
+                        APP
+                      </a>
                     </div>
                   </div>
                 </div>

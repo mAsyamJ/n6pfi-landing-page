@@ -1,23 +1,18 @@
 import { redirect } from 'next/navigation';
-import fs from 'fs/promises';
+import fs from 'fs';
 import path from 'path';
 import { parseDoc } from '../../lib/utils';
 
-export default async function UserDocPage() {
+export default function UserDocPage() {
   const docPath = path.join(process.cwd(), 'docs', 'user_doc.txt');
+  const userDocContent = fs.readFileSync(docPath, 'utf-8');
+  const sections = parseDoc(userDocContent);
+  const firstSection = sections[0];
 
-  try {
-    const userDocContent = await fs.readFile(docPath, 'utf-8');
-    const sections = parseDoc(userDocContent);
-    const firstSection = sections[0];
-
-    if (firstSection) {
-      redirect(`/doc-user/${firstSection.slug}`);
-    }
-
-    return <div>No sections found in the documentation.</div>;
-  } catch (error) {
-    console.error("Error reading user documentation:", error);
-    return <div>Error loading documentation. Please check the server logs.</div>;
+  if (firstSection) {
+    redirect(`/doc-user/${firstSection.slug}`);
   }
+
+  // Fallback if there are no sections
+  return <div>No documentation found.</div>;
 }
