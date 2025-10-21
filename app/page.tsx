@@ -16,7 +16,8 @@ import FAQSection from "../components/sections/faq-section"
 import PricingSection from "../components/sections/pricing-section"
 import CTASection from "../components/sections/cta-section"
 import FooterSection from "../components/sections/footer-section"
-import { TrendingUp, Grid, Layers, Link } from "lucide-react"
+import Link from "next/link"
+import { TrendingUp, Grid, Layers } from "lucide-react"
 import FeatureCard from "../components/ui/feature-card"
 
 // Reusable Badge Component
@@ -151,7 +152,7 @@ export default function LandingPage() {
                       NapFi
                     </div>
                   </div>
-                  <div className="pl-3 sm:pl-4 md:pl-5 lg:pl-5 flex justify-start items-start hidden sm:flex flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-4">
+                  <div className="pl-3 sm:pl-4 md:pl-5 lg:pl-5 flex justify-start items-center flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-4">
                     
                     <div className="flex justify-start items-center">
                       <Link href="/doc-dev">
@@ -172,7 +173,13 @@ export default function LandingPage() {
                 <div className="h-6 sm:h-7 md:h-8 flex justify-start items-start gap-2 sm:gap-3">
                   <div className="px-2 sm:px-3 md:px-[14px] py-1 sm:py-[6px] bg-[#f0f0f0] shadow-[0px_0px_15px_rgba(147,51,234,0.2)] overflow-hidden rounded-full flex justify-center items-center">
                     <div className="flex flex-col justify-center text-[#0a0a14] text-xs md:text-[13px] font-medium leading-5 font-sans">
-                      Log in
+                      <a
+                        href="https://napfi-zenith.vercel.app"
+                        target="_blank" // hapus kalau mau tetap di tab yang sama
+                        className="flex flex-col justify-center text-[#0a0a14] text-xs md:text-[13px] font-medium leading-5 font-sans hover:underline cursor-pointer"
+                      >
+                        APP
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -229,14 +236,14 @@ export default function LandingPage() {
                       <div className="relative w-full h-full overflow-hidden">
                         {/* Product Image 1 - AI-Optimized Yield Routing */}
                         <div
-                          className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-                            activeCard === 0 ? "opacity-100 scale-100 blur-0" : "opacity-0 scale-95 blur-sm"
+                          className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out ${
+                            activeCard === 0 ? "opacity-100 scale-120 blur-0" : "opacity-0 scale-95 blur-sm"
                           }`}
                         >
                           <img
-                            src="/images/dsadsadsa.jpg.jpeg"
+                            src="/images/main-dash.png"
                             alt="AI Yield Routing Dashboard"
-                            className="w-full h-full object-cover"
+                            className="max-w-full max-h-full object-contain"
                           />
                         </div>
 
@@ -247,7 +254,7 @@ export default function LandingPage() {
                           }`}
                         >
                           <img
-                            src="/images/analytics-dashboard-with-charts-graphs-and-data-vi.jpg"
+                            src="/images/vault-detail.png"
                             alt="Revenue Tokenization Dashboard"
                             className="w-full h-full object-cover"
                           />
@@ -260,7 +267,7 @@ export default function LandingPage() {
                           }`}
                         >
                           <img
-                            src="/images/data-visualization-dashboard-with-interactive-char.jpg"
+                            src="/images/features.png"
                             alt="Fractional Ownership Dashboard"
                             className="w-full h-full object-contain"
                           />

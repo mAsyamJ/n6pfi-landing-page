@@ -12,7 +12,13 @@ export function Header() {
             </div>
           </div>
           <Button variant="ghost" className="text-[#37322f] hover:bg-[#37322f]/5">
-            Log in
+            <a
+                        href="https://napfi-zenith.vercel.app"
+                        target="_blank" // hapus kalau mau tetap di tab yang sama
+                        className="flex flex-col justify-center text-[#0a0a14] text-xs md:text-[13px] font-medium leading-5 font-sans hover:underline cursor-pointer"
+                      >
+                        APP
+                      </a>
           </Button>
         </nav>
       </div>
