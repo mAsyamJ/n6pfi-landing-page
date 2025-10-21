@@ -3,16 +3,17 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
-import SmartSimpleBrilliant from "../components/smart-simple-brilliant"
-import YourWorkInSync from "../components/your-work-in-sync"
-import EffortlessIntegration from "../components/effortless-integration-updated"
-import NumbersThatSpeak from "../components/numbers-that-speak"
-import DocumentationSection from "../components/documentation-section"
-import TestimonialsSection from "../components/testimonials-section"
-import FAQSection from "../components/faq-section"
-import PricingSection from "../components/pricing-section"
-import CTASection from "../components/cta-section"
-import FooterSection from "../components/footer-section"
+import SmartSimpleBrilliant from "../components/sections/smart-simple-brilliant"
+import YourWorkInSync from "../components/sections/your-work-in-sync"
+import EffortlessIntegration from "../components/sections/effortless-integration"
+import NumbersThatSpeak from "../components/sections/numbers-that-speak"
+import DocumentationSection from "../components/sections/documentation-section"
+import TestimonialsSection from "../components/sections/testimonials-section"
+import FAQSection from "../components/sections/faq-section"
+import PricingSection from "../components/sections/pricing-section"
+import CTASection from "../components/sections/cta-section"
+import FooterSection from "../components/sections/footer-section"
+import FeatureCard from "../components/ui/feature-card"
 
 // Reusable Badge Component
 function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
@@ -200,7 +201,7 @@ export default function LandingPage() {
 
               <div className="absolute top-[232px] sm:top-[248px] md:top-[264px] lg:top-[320px] left-1/2 transform -translate-x-1/2 z-0 pointer-events-none">
                 <img
-                  src="/mask-group-pattern.svg"
+                  src="/patterns/mask-group-pattern.svg"
                   alt=""
                   className="w-[936px] sm:w-[1404px] md:w-[2106px] lg:w-[2808px] h-auto opacity-20 sm:opacity-25 md:opacity-30 mix-blend-screen"
                   style={{
@@ -223,7 +224,7 @@ export default function LandingPage() {
                           }`}
                         >
                           <img
-                            src="/images/design-mode/dsadsadsa.jpg.jpeg"
+                            src="/images/dsadsadsa.jpg.jpeg"
                             alt="AI Yield Routing Dashboard"
                             className="w-full h-full object-cover"
                           />
@@ -236,7 +237,7 @@ export default function LandingPage() {
                           }`}
                         >
                           <img
-                            src="/analytics-dashboard-with-charts-graphs-and-data-vi.jpg"
+                            src="/images/analytics-dashboard-with-charts-graphs-and-data-vi.jpg"
                             alt="Revenue Tokenization Dashboard"
                             className="w-full h-full object-cover"
                           />
@@ -249,7 +250,7 @@ export default function LandingPage() {
                           }`}
                         >
                           <img
-                            src="/data-visualization-dashboard-with-interactive-char.jpg"
+                            src="/images/data-visualization-dashboard-with-interactive-char.jpg"
                             alt="Fractional Ownership Dashboard"
                             className="w-full h-full object-contain"
                           />
@@ -361,7 +362,7 @@ export default function LandingPage() {
 
                   <div className="flex-1 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-0 border-l border-r border-[rgba(147,51,234,0.1)]">
                     {/* Logo Grid - Responsive grid */}
-                    {Array.from({ length: 8 }).map((_, index) => {
+                    {Array.from({ length: 4 }).map((_, index) => {
                       const isMobileFirstColumn = index % 2 === 0
                       const isMobileLastColumn = index % 2 === 1
                       const isDesktopFirstColumn = index % 4 === 0
@@ -369,6 +370,22 @@ export default function LandingPage() {
                       const isMobileBottomRow = index >= 6
                       const isDesktopTopRow = index < 4
                       const isDesktopBottomRow = index >= 4
+
+                      let protocolName = ""
+                      let logoSrc = "/icons/horizon-icon.svg" // Default logo
+                      if (index === 0) {
+                        protocolName = "Base"
+                        logoSrc = "/icons/_base-square.svg"
+                      } else if (index === 1) {
+                        protocolName = "Base"
+                        logoSrc = "/icons/_base-square.svg"
+                      } else if (index === 2) {
+                        protocolName = "Base"
+                        logoSrc = "/icons/_base-square.svg"
+                      } else if (index === 3) {
+                        protocolName = "Base"
+                        logoSrc = "/icons/_base-square.svg"
+                      }
 
                       return (
                         <div
@@ -387,11 +404,11 @@ export default function LandingPage() {
                             border-[rgba(147,51,234,0.1)]
                           `}
                         >
-                          <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 relative shadow-[0px_-4px_8px_rgba(147,51,234,0.1)_inset] overflow-hidden rounded-full">
-                            <img src="/horizon-icon.svg" alt="Protocol" className="w-full h-full object-contain" />
+                          <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 relative shadow-[0px_-4px_8px_rgba(147,51,234,0.1)_inset] overflow-hidden">
+                            <img src={logoSrc} alt={protocolName} className="w-full h-full object-contain" />
                           </div>
                           <div className="text-center flex justify-center flex-col text-[#e0e0e0] text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-tight md:leading-9 font-sans">
-                            Protocol
+                            {protocolName}
                           </div>
                         </div>
                       )
@@ -579,48 +596,6 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  )
-}
-
-// FeatureCard component definition inline to fix import error
-function FeatureCard({
-  title,
-  description,
-  isActive,
-  progress,
-  onClick,
-}: {
-  title: string
-  description: string
-  isActive: boolean
-  progress: number
-  onClick: () => void
-}) {
-  return (
-    <div
-      className={`w-full md:flex-1 self-stretch px-6 py-5 overflow-hidden flex flex-col justify-start items-start gap-2 cursor-pointer relative border-b md:border-b-0 last:border-b-0 ${
-        isActive
-          ? "bg-[rgba(147,51,234,0.1)] shadow-[0px_0px_20px_rgba(147,51,234,0.15),inset_0px_0px_0px_1px_rgba(147,51,234,0.2)]"
-          : "border-l-0 border-r-0 md:border border-[rgba(147,51,234,0.1)]"
-      }`}
-      onClick={onClick}
-    >
-      {isActive && (
-        <div className="absolute top-0 left-0 w-full h-0.5 bg-[rgba(147,51,234,0.2)]">
-          <div
-            className="h-full bg-gradient-to-r from-[#9333ea] to-[#7c3aed] transition-all duration-100 ease-linear"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-      )}
-
-      <div className="self-stretch flex justify-center flex-col text-[#f0f0f0] text-sm md:text-sm font-semibold leading-6 md:leading-6 font-sans">
-        {title}
-      </div>
-      <div className="self-stretch text-[#c0c0c0] text-[13px] md:text-[13px] font-normal leading-[22px] md:leading-[22px] font-sans">
-        {description}
       </div>
     </div>
   )
