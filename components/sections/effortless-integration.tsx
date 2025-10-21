@@ -1,3 +1,4 @@
+import { Github, Slack, Figma, Framer } from "lucide-react"
 import type React from "react"
 
 interface EffortlessIntegrationProps {
@@ -146,15 +147,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
             justifyContent: "center",
           }}
         >
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
-            alt="GitHub"
-            style={{
-              width: "18px",
-              height: "18px",
-              filter: "brightness(0) invert(1)",
-            }}
-          />
+          <Github className="w-5 h-5 text-white" />
         </div>
 
         {/* Slack - 0° (right) */}
@@ -173,14 +166,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
             justifyContent: "center",
           }}
         >
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/slack.svg"
-            alt="Slack"
-            style={{
-              width: "18px",
-              height: "18px",
-            }}
-          />
+          <Slack className="w-5 h-5 text-black" />
         </div>
 
         {/* Figma - 315° (top-right) */}
@@ -199,14 +185,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
             justifyContent: "center",
           }}
         >
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/figma.svg"
-            alt="Figma"
-            style={{
-              width: "16px",
-              height: "16px",
-            }}
-          />
+          <Figma className="w-5 h-5 text-black" />
         </div>
 
         {/* Discord - 135° (bottom-left) */}
@@ -225,7 +204,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
             justifyContent: "center",
           }}
         >
-          <img
+                    <img
             src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg"
             alt="Discord"
             style={{
@@ -252,7 +231,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
             justifyContent: "center",
           }}
         >
-          <img
+                    <img
             src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/notion.svg"
             alt="Notion"
             style={{
@@ -278,7 +257,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
             justifyContent: "center",
           }}
         >
-          <img
+                    <img
             src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/stripe.svg"
             alt="Stripe"
             style={{
@@ -305,15 +284,7 @@ const EffortlessIntegration: React.FC<EffortlessIntegrationProps> = ({ width = 4
             justifyContent: "center",
           }}
         >
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/framer.svg"
-            alt="Framer"
-            style={{
-              width: "16px",
-              height: "16px",
-              filter: "brightness(0) invert(1)",
-            }}
-          />
+          <Framer className="w-5 h-5 text-white" />
         </div>
 
         <svg

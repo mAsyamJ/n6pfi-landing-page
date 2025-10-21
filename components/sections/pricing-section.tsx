@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { DollarSign } from "lucide-react"
 
 export default function PricingSection() {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annually">("annually")
@@ -13,31 +14,8 @@ export default function PricingSection() {
           {/* Pricing Badge */}
           <div className="px-[14px] py-[6px] bg-[#1a1a2e] shadow-[0px_0px_20px_rgba(147,51,234,0.2)] overflow-hidden rounded-[90px] flex justify-start items-center gap-[8px] border border-[rgba(147,51,234,0.3)]">
             <div className="w-[14px] h-[14px] relative overflow-hidden flex items-center justify-center">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M6 1V11M8.5 3H4.75C4.28587 3 3.84075 3.18437 3.51256 3.51256C3.18437 3.84075 3 4.28587 3 4.75C3 5.21413 3.18437 5.65925 3.51256 5.98744C3.84075 6.31563 4.28587 6.5 4.75 6.5H7.25C7.71413 6.5 8.15925 6.68437 8.48744 7.01256C8.81563 7.34075 9 7.78587 9 8.25C9 8.71413 8.81563 9.15925 8.48744 9.48744C8.15925 9.81563 7.71413 10 7.25 10H3.5"
-                  stroke="#e0e0e0"
-                  strokeWidth="1"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <DollarSign className="w-4 h-4 text-white" />
             </div>
-            <div className="text-center flex justify-center flex-col text-[#e0e0e0] text-xs font-medium leading-3 font-sans">
-              Plans & Pricing
-            </div>
-          </div>
-
-          {/* Title */}
-          <div className="self-stretch text-center flex justify-center flex-col text-[#f0f0f0] text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-            Flexible Plans for Every Stage
-          </div>
-
-          {/* Description */}
-          <div className="self-stretch text-center text-[#c0c0c0] text-base font-normal leading-7 font-sans">
-            Start with SDK access, scale to enterprise infrastructure.
-            <br />
-            Pay for what you use, upgrade anytime.
           </div>
         </div>
       </div>
