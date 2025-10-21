@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { Circle } from "lucide-react"
 import type React from "react"
 
 // Badge component for consistency
@@ -57,9 +58,7 @@ export default function DocumentationSection() {
       <div className="self-stretch px-6 md:px-24 py-12 md:py-16 border-b border-[rgba(147,51,234,0.1)] flex justify-center items-center gap-6">
         <div className="w-full max-w-[586px] px-6 py-5 shadow-[0px_2px_4px_rgba(50,45,43,0.06)] overflow-hidden rounded-lg flex flex-col justify-start items-center gap-4 shadow-none">
           <Badge
-            icon={
-              <div className="w-[10.50px] h-[10.50px] outline outline-[1.17px] outline-[#e0e0e0] outline-offset-[-0.58px] rounded-full"></div>
-            }
+            icon={<Circle className="w-3 h-3 text-white" />}
             text="Core Features"
           />
           <div className="self-stretch text-center flex justify-center flex-col text-[#f0f0f0] text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">

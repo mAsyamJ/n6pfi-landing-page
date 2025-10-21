@@ -17,10 +17,10 @@ export default function FeatureCard({
 }) {
   return (
     <div
-      className={`w-full md:flex-1 self-stretch px-6 py-5 overflow-hidden flex flex-col justify-start items-start gap-2 cursor-pointer relative border-b md:border-b-0 last:border-b-0 ${
+      className={`w-full md:flex-1 self-stretch px-6 py-5 overflow-hidden flex flex-col justify-start items-start gap-2 cursor-pointer relative border-b md:border-b-0 last:border-b-0 backdrop-blur-lg animate-gradient-border ${
         isActive
-          ? "bg-[rgba(147,51,234,0.1)] shadow-[0px_0px_20px_rgba(147,51,234,0.15),inset_0px_0px_0px_1px_rgba(147,51,234,0.2)]"
-          : "border-l-0 border-r-0 md:border border-[rgba(147,51,234,0.1)]"
+          ? "bg-white/10 shadow-lg"
+          : "bg-white/5 border-l-0 border-r-0 md:border border-white/10"
       }`}
       onClick={onClick}
     >

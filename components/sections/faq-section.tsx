@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { ChevronDown } from "lucide-react"
 
 interface FAQItem {
   question: string
@@ -45,20 +46,7 @@ const faqData: FAQItem[] = [
   },
 ]
 
-function ChevronDownIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
+
 
 export default function FAQSection() {
   const [openItems, setOpenItems] = useState<number[]>([])
@@ -99,7 +87,7 @@ export default function FAQSection() {
                       {item.question}
                     </div>
                     <div className="flex justify-center items-center">
-                      <ChevronDownIcon
+                      <ChevronDown
                         className={`w-6 h-6 text-[#a0a0a0] transition-transform duration-300 ease-in-out ${
                           isOpen ? "rotate-180" : "rotate-0"
                         }`}

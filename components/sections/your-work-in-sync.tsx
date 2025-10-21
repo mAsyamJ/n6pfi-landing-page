@@ -1,3 +1,4 @@
+import { ArrowUp } from "lucide-react"
 import type React from "react"
 
 interface YourWorkInSyncProps {
@@ -50,8 +51,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
   const imgFrame2147223205 = "/professional-woman-avatar-with-short-brown-hair-an.jpg"
   const imgFrame2147223206 = "/professional-man-avatar-with-beard-and-glasses-loo.jpg"
   const imgFrame2147223207 = "/professional-person-avatar-with-curly-hair-and-war.jpg"
-  const imgArrowUp =
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='3' strokeLinecap='round' strokeLinejoin='round'%3E%3Cpath d='m5 12 7-7 7 7'/%3E%3Cpath d='M12 19V5'/%3E%3C/svg%3E"
+
 
   return (
     <div
@@ -296,15 +296,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                 flexShrink: 0,
               }}
             >
-              <img
-                src={imgArrowUp || "/placeholder.svg"}
-                alt="Send"
-                style={{
-                  width: "20px",
-                  height: "20px",
-                  filter: "brightness(0) invert(1)",
-                }}
-              />
+              <ArrowUp className="w-5 h-5 text-white" />
             </div>
           </div>
         </div>
