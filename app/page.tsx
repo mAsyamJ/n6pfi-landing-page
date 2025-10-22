@@ -5,12 +5,12 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 
 import HowItWorksSection from "../components/sections/how-it-works-section"
-import UseCasesSection from "../components/sections/use-cases-section"
 import VaultShowcaseSection from "../components/sections/vault-showcase-section"
 
 import EffortlessIntegration from "../components/sections/effortless-integration"
 import NumbersThatSpeak from "../components/sections/numbers-that-speak"
-import DocumentationSection from "../components/sections/documentation-section"
+import BeautifulDocsSection from "../components/sections/beautiful-docs-section"
+import CoreFeaturesSection from "../components/sections/core-features-section"
 import TestimonialsSection from "../components/sections/testimonials-section"
 import FAQSection from "../components/sections/faq-section"
 import PricingSection from "../components/sections/pricing-section"
@@ -535,14 +535,15 @@ export default function LandingPage() {
 
                             <HowItWorksSection />
 
-                            <UseCasesSection />
+                            <CoreFeaturesSection />
+
               <VaultShowcaseSection />
               
 
               
 
                             {/* Documentation Section */}
-              <DocumentationSection />
+              <BeautifulDocsSection />
 
               {/* Testimonials Section */}
               <TestimonialsSection />

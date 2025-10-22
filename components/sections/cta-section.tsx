@@ -27,32 +27,48 @@ export default function CTASection() {
 
         <div className="w-full max-w-[586px] px-6 py-5 md:py-8 overflow-hidden rounded-lg flex flex-col justify-start items-center gap-6 relative z-20">
           <div className="self-stretch flex flex-col justify-start items-start gap-3">
-            <div className="self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[56px] font-sans tracking-tight">
-              Ready to revolutionize yield?
+            <div className="self-stretch text-center flex justify-center flex-col text-white text-3xl md:text-5xl font-semibold leading-tight md:leading-[56px] font-sans tracking-tight">
+              Ready to Build the Future?
             </div>
-            <div className="self-stretch text-center text-[#605A57] text-base leading-7 font-sans font-medium">
-              Join institutions and creators building the future of DeFi
-              <br />
-              with NapFi's modular yield infrastructure.
+            <div className="self-stretch text-center text-white text-base leading-7 font-sans font-medium">
+              Join thousands of developers and creators building the next generation of DeFi infrastructure.
             </div>
           </div>
           <div className="w-full max-w-[497px] flex flex-col justify-center items-center gap-12">
             <div className="flex justify-center items-center gap-4 flex-wrap">
               <CTAButton
-                text="Get Early Access"
+                text="Start Building"
                 variant="primary"
-                isHovered={hoveredButton === "early-access"}
-                onHover={() => setHoveredButton("early-access")}
+                isHovered={hoveredButton === "start-building"}
+                onHover={() => setHoveredButton("start-building")}
                 onLeave={() => setHoveredButton(null)}
-                onClick={() => console.log("Get Early Access clicked")}
+                onClick={() => console.log("Start Building clicked")}
               />
               <CTAButton
-                text="Join the Community"
+                text="View Documentation"
+                variant="secondary"
+                isHovered={hoveredButton === "documentation"}
+                onHover={() => setHoveredButton("documentation")}
+                onLeave={() => setHoveredButton(null)}
+                onClick={() => console.log("View Documentation clicked")}
+              />
+            </div>
+            <div className="flex justify-center items-center gap-4 flex-wrap">
+              <CTAButton
+                text="Join Developers"
+                variant="secondary"
+                isHovered={hoveredButton === "developers"}
+                onHover={() => setHoveredButton("developers")}
+                onLeave={() => setHoveredButton(null)}
+                onClick={() => console.log("Join Developers clicked")}
+              />
+              <CTAButton
+                text="Join Community"
                 variant="secondary"
                 isHovered={hoveredButton === "community"}
                 onHover={() => setHoveredButton("community")}
                 onLeave={() => setHoveredButton(null)}
-                onClick={() => console.log("Join the Community clicked")}
+                onClick={() => console.log("Join Community clicked")}
               />
             </div>
           </div>

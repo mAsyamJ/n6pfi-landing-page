@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import { motion } from "framer-motion"
 
 const HowItWorksSection: React.FC = () => {
   const steps = [
@@ -43,7 +42,7 @@ const HowItWorksSection: React.FC = () => {
   ]
 
   return (
-    <div className="w-full py-16 sm:py-24 bg-[#0a0a14]">
+    <div className="w-full py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -53,26 +52,48 @@ const HowItWorksSection: React.FC = () => {
             A step-by-step guide to tokenizing creative income with NapFi.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              className="bg-[rgba(20,20,40,0.6)] p-6 rounded-lg shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <div className="flex items-center">
-                <div className="text-2xl font-bold text-purple-400 mr-4">
-                  {index + 1}
+        <div className="mt-12 space-y-8">
+          {steps.map((step, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <div key={index} className="flex flex-col lg:flex-row items-center gap-8">
+                {/* Text content - alternates left/right */}
+                <div className={`flex-1 lg:max-w-md ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                      {index + 1}
+                    </div>
+                    <h3 className="text-2xl font-semibold text-white">
+                      {step.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-300 text-lg leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-white">
-                  {step.title}
-                </h3>
+
+                {/* Visual representation - alternates right/left */}
+                <div className={`flex-1 lg:max-w-md ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                  <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-xl p-6 border border-purple-500/30">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span className="text-white font-bold text-xl">
+                          {index + 1}
+                        </span>
+                      </div>
+                      <h4 className="text-white font-semibold mb-2">{step.title}</h4>
+                      <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-full transition-all duration-1000"
+                          style={{ width: `${((index + 1) / steps.length) * 100}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="mt-4 text-gray-300">{step.description}</p>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

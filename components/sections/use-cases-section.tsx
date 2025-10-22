@@ -2,7 +2,6 @@
 "use client"
 
 import type React from "react"
-import { motion } from "framer-motion"
 import { Music, Video, Twitch } from "lucide-react"
 
 const UseCasesSection: React.FC = () => {
@@ -28,7 +27,7 @@ const UseCasesSection: React.FC = () => {
   ]
 
   return (
-    <div className="w-full py-16 sm:py-24 bg-[#0a0a14]">
+    <div className="w-full py-16 sm:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -40,19 +39,16 @@ const UseCasesSection: React.FC = () => {
         </div>
         <div className="mt-12 grid gap-8 sm:grid-cols-1 lg:grid-cols-3">
           {useCases.map((useCase, index) => (
-            <motion.div
+            <div
               key={index}
-              className="bg-[rgba(20,20,40,0.6)] p-8 rounded-lg shadow-lg flex flex-col items-center text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              className="p-8 rounded-lg flex flex-col items-center text-center"
             >
               <div className="mb-4">{useCase.icon}</div>
               <h3 className="text-2xl font-semibold text-white">
                 {useCase.title}
               </h3>
               <p className="mt-4 text-gray-300">{useCase.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

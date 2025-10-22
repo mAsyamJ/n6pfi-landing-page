@@ -2,7 +2,6 @@
 "use client"
 
 import type React from "react"
-import { motion } from "framer-motion"
 import { Music, Video, Twitch } from "lucide-react"
 
 const VaultPlaygroundSection: React.FC = () => {
